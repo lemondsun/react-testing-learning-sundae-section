@@ -9,8 +9,6 @@ describe('How the checkbox opperates', () => {
     // get checkbox from summary page
     const checkbox = screen.getByRole('checkbox', { name: /I agree to Terms and Conditions/i })
     expect(checkbox).not.toBeChecked()
-
-
   })
 
   test('checkbox enabales button and disables button', () => {
@@ -20,11 +18,11 @@ describe('How the checkbox opperates', () => {
     const button = screen.getByRole('button', {name: /Confirm order/i})
 
     //click checkbox
-  userEvent.click(checkbox)
+    userEvent.click(checkbox)
     expect(button).toBeEnabled()
 
      //click checkbox
-     userEvent.click(checkbox)
+    userEvent.click(checkbox)
     expect(button).not.toBeEnabled()
   })
 })
@@ -46,6 +44,6 @@ test('popover responds to hover', async () => {
   // popover disappears when we mouse out
   userEvent.unhover(termsAndConditions)
   await waitForElementToBeRemoved(() =>
-    screen.queryByText(/no ice cream will actually be delivered/i)
+  screen.queryByText(/no ice cream will actually be delivered/i)
 )
 })
